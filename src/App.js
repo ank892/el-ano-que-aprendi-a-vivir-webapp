@@ -42,20 +42,20 @@ const App = () => {
       id: 'q2',
       question: 'Cuando te enfrentas a una situación difícil, ¿cuál es tu primera reacción?',
       choices: [
-        { id: 'A', label: 'Analizo el problema para encontrar la solución más eficiente.' },
-        { id: 'B', label: 'Investigo y busco nuevas perspectivas para entenderla.' },
-        { id: 'C', label: 'Me aseguro de que mi gente esté bien y les ofrezco apoyo.' },
-        { id: 'D', label: 'Me permito sentir las emociones y reflexionar sobre su impacto.' },
+            { id: 'A', label: 'Analizo el problema para encontrar la solución más eficiente.' },
+            { id: 'B', label: 'Investigo y busco nuevas perspectivas para entenderla.' },
+            { id: 'C', label: 'Me aseguro de que mi gente esté bien y les ofrezco apoyo.' },
+            { id: 'D', label: 'Me permito sentir las emociones y reflexionar sobre su impacto.' },
       ],
     },
     {
       id: 'q3',
       question: '¿Qué consideras el verdadero "éxito" en la vida?',
       choices: [
-        { id: 'A', label: 'Alcanzar mis metas y objetivos profesionales.' },
-        { id: 'B', label: 'Superar obstáculos y crecer como persona.' },
-        { id: 'C', label: 'Ver a mi familia feliz y segura.' },
-        { id: 'D', label: 'Vivir cada momento con plenitud y propósito.' },
+            { id: 'A', label: 'Alcanzar mis metas y objetivos profesionales.' },
+            { id: 'B', label: 'Superar obstáculos y crecer como persona.' },
+            { id: 'C', label: 'Ver a mi familia feliz y segura.' },
+            { id: 'D', label: 'Vivir cada momento con plenitud y propósito.' },
       ],
     },
   ];
@@ -210,8 +210,15 @@ const App = () => {
     switch (screen) {
       case 'welcome':
         return (
-          <div className="text-center">
+          <div className="text-center flex flex-col items-center">
             <h1 className="text-4xl font-bold text-gray-800 mb-4">El Año en que Aprendí a Vivir</h1>
+            {/* Image of Book Cover */}
+            <img
+              src="https://miguelfuentes.org/wp-content/uploads/2025/07/Untitled-design-1.jpg"
+              alt="Portada del libro El Año en que Aprendí a Vivir"
+              className="w-48 h-auto rounded-lg shadow-lg mb-6"
+              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/192x288/cccccc/ffffff?text=Portada+no+disponible"; }}
+            />
             <p className="text-xl text-gray-600 mb-8">Una Experiencia Interactiva</p>
             <button
               onClick={() => setScreen('profile_questions')}
@@ -286,6 +293,14 @@ const App = () => {
                 className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
               >
                 Descubre más en el libro
+              </a>
+              <a
+                href="https://bit.ly/cap1aprendi" // Link para descargar el Capítulo 1
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                Descargar Capítulo 1 (PDF)
               </a>
               <button
                 onClick={restartExperience}
