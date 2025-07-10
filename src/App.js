@@ -304,9 +304,9 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center p-4 font-inter">
       {/* Script CDN de Tailwind CSS */}
-      <script src="https://cdn.tailwindcss.com"></script>
-      {/* Google Fonts para Inter */}
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+      {/* Este script y el enlace a Google Fonts se han movido a public/index.html */}
+      {/* <script src="https://cdn.tailwindcss.com"></script> */}
+      {/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" /> */}
 
       <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full border border-gray-200">
         {renderScreen()}
